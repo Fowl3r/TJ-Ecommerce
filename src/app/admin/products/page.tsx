@@ -54,6 +54,8 @@ async function ProductsTable(){
                                         Edit
                                     </Link>
                                 </DropdownMenuItem>
+                                <DropdownMenuSeparator />
+                                <DeleteDropdownItem id={product.id} disabled={product._count.orders > 0} />
                             </DropdownMenuContent>
                         </DropdownMenu>
                     </TableCell>
@@ -62,4 +64,5 @@ async function ProductsTable(){
         </TableBody>
     </Table>
 }
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";import { DeleteDropdownItem } from "./_components/ProductActions";
+
